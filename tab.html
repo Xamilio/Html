@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout Flex</title>
+<style>
+    body 
+    {
+        margin: 0;
+        background-color: #f3f3f3;
+    }
+
+    .hader 
+    {
+        height: 80px;
+        background-color: #a41a54;
+        margin: 1%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: Arial;
+    }
+
+    .menu 
+    {
+        height: 50px;
+        background-color: #74133b;
+        margin: 1%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: Arial;
+    }
+
+    .content 
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 1%;
+        gap: 10px;
+    }
+
+    .left-block, .right-block 
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .aside1, .aside2, .aside3 
+    {
+        background-color: #ab3d6b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: Arial;
+        font-size: 15px;
+    }
+
+    .aside1 
+    {
+        width: 200px;
+        height: 80px;
+    }
+
+    .aside2 
+    {
+        width: 200px;
+        height: 130px;
+    }
+
+    .aside3 
+    {
+        width: 100px;
+        height: 220px;
+    }
+
+    .maincontent 
+    {
+        flex: 1;
+        height: 280px;
+        background-color: #ab3d6b;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        font-family: Arial;
+        font-size: 15px;
+    }
+
+    .section
+    {
+        width: 90%;
+        height: 80px;
+        background-color: #c68da2;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        font-family: Arial;
+        color: white;
+    }
+    .footer 
+    {
+        height: 50px;
+        background-color: #74133b;
+        margin: 1%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: Arial;
+    }
+</style>
+</head>
+<body>
+    <div class="hader"><p>HEADER</p></div>
+    <div class="menu"><p>MENU</p></div>
+
+    <div class="content">
+        <div class="left-block">
+            <div class="aside1"><p>ASIDE 1</p></div>
+            <div class="aside2"><p>ASIDE 2</p></div>
+        </div>
+
+        <div class="maincontent">
+            <p>MAIN CONTENT</p>
+            <div class="section">
+                <p>SECTION 1</p>
+            </div>
+            <div class="section">
+                <p>SECTION 2</p>
+            </div>
+        </div>
+
+        <div class="right-block">
+            <div class="aside3"><p>ASIDE 3</p></div>
+        </div>
+    </div>
+    <div class="footer"><p>FOOTER</p></div>
+</body>
+</html>
