@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e2e1e1;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh; 
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: rgb(49, 49, 49);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5% 0;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 60%;
+            max-width: 160px;
+            margin-bottom: 5%;
+        }
+
+        .menu {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            width: 100%;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            text-align: left;
+        }
+
+        .menu li {
+            padding: 10% 0;
+            font-size: 1.35em;
+            cursor: pointer;
+            padding-left: 20%;
+            transition: background-color 0.2s;
+        }
+
+        .menu li:hover {
+            background-color: #444444;
+        }
+
+        .main {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2% 3%;
+            background-color: white;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            margin: 0 0 3% 0;
+            font-size: 1.5em;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            height: 55%;
+        }
+
+        .box {
+            width: 48%;
+            background-color: #e4e2e2;
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3%;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        .box h3 {
+            margin-bottom: 2%;
+            font-size: 1.2em;
+        }
+
+        .box img {
+            width: 90%;
+            height: 80%;
+            object-fit: contain;
+            border-radius: 2%;
+        }
+
+        .recent {
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recent h3 {
+            margin-bottom: 1%;
+        }
+
+        .activity {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 0.2vh solid #ccc;
+            padding: 1% 0;
+            font-size: 0.9em;
+        }
+
+        .row div {
+            width: 23%;
+        }
+
+        .header {
+            background-color: #ebebeb;
+            font-weight: bold;
+        }
+
+        .row:hover {
+            background-color: #f6f6f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="Logo chart">
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li>Dashboard</li>
+                    <li>Users</li>
+                    <li>File Manager</li>
+                    <li>Posts</li>
+                    <li>Events</li>
+                </ul>
+            </div>
+        </aside>
+        <main class="main">
+            <h2>Dashboard - May 25, 2019</h2>
+
+            <div class="stats">
+                <div class="traffic box">
+                    <h3>TRAFFIC</h3>
+                    <img src="traffic.png" alt="Traffic chart">
+                </div>
+                <div class="loads box">
+                    <h3>LOADS</h3>
+                    <img src="loads.png" alt="Loads chart">
+                </div>
+            </div>
+
+            <div class="recent">
+                <h3>RECENT ACTIVITY</h3>
+                <div class="activity">
+                    <div class="row header">
+                        <div>#</div>
+                        <div>Title</div>
+                        <div>Author</div>
+                        <div>Date</div>
+                    </div>
+
+                    <div class="row">
+                        <div>1</div>
+                        <div>Etiam eu erat sit amet nisi eleifend aliquam</div>
+                        <div>Phoebe Brittan</div>
+                        <div>25/05/19</div>
+                    </div>
+
+                    <div class="row">
+                        <div>2</div>
+                        <div>Ut maximus lacus ut ante tristique, et rutrum leo eleifend</div>
+                        <div>Rosina Clay</div>
+                        <div>25/05/19</div>
+                    </div>
+
+                    <div class="row">
+                        <div>3</div>
+                        <div>Donec eget ligula sed diam pharetra sodales eget a metus</div>
+                        <div>Ayah Horn</div>
+                        <div>24/05/19</div>
+                    </div>
+
+                    <div class="row">
+                        <div>4</div>
+                        <div>Curabitur bibendum odio in velit pretium luctus</div>
+                        <div>Jillian Carver</div>
+                        <div>23/05/19</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
