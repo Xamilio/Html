@@ -1,1 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>first</title>
+<style>
+    body 
+    {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+    }
 
+    .container 
+    {
+        width: 1024px;
+        border: 2px solid black;
+        padding: 10px;
+        background-color: #fff;
+        box-sizing: border-box;
+    }
+
+    header 
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        height: 80px;
+    }
+
+    .logo .image-block 
+    {
+        width: 90px;
+        height: 80px;
+        margin: 0 auto;
+    }   
+
+    .logo img 
+    {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    nav 
+    {
+        border: 1px solid  rgb(175, 174, 174);
+        margin-top: 10px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        background-color: #fafafa;
+    }
+
+    nav div 
+    {
+        transition: all 0.3s ease; 
+        cursor: pointer;
+    }
+
+    nav div:hover 
+    {
+        font-weight: bold;        
+        color: #333;
+        transform: scale(1.05);  
+    }
+
+    .search 
+    {
+        border: 1px solid rgb(175, 174, 174);
+        padding: 5px 10px;
+    }
+
+    .main 
+    {
+        display: flex;
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .content 
+    {
+        flex: 3;
+        border: 1px solid  rgb(175, 174, 174);
+        padding: 20px 30px;
+        text-align: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .content h2 
+    {
+        font-size: 22px;
+        color: #222;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        text-align: left;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .content p 
+    {
+        text-align: justify;
+        line-height: 1.6;
+        color: #333;
+        font-size: 16px;
+        margin-bottom: 15px;
+        text-indent: 25px;
+    }
+
+    .image-block 
+    {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .image-block img 
+    {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    aside.sidebar 
+    {
+        flex: 1;
+        border: 1px solid  rgb(175, 174, 174);
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #fff;
+    }
+
+    .sidebar-block 
+    {
+        border: 1px solid rgb(175, 174, 174);
+        padding: 10px;
+        background-color: #f9f9f9;
+    }
+
+    .sidebar-block h3 
+    {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .sidebar-block ul 
+    {
+        margin: 0;
+        padding-left: 20px;
+        text-align: left;
+    }
+
+    .sidebar-block ul li 
+    {
+        margin-bottom: 5px;
+    }
+
+    .mini-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .mini-gallery img 
+    {
+        width: 100px; 
+        height: 80px;
+        object-fit: cover;
+        border-radius: 3px;
+        transition: transform 0.5s ease;
+    }
+
+    .mini-gallery img:hover 
+    {
+        transform: scale(1.05);
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px;
+        margin-top: 15px;
+        font-size: 14px;
+        color: #555;
+        background-color: #fafafa;
+        border-top: 1px solid #ddd;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <header>
+        <div class="logo">
+        <div class="image-block">
+            <img src="images.jpg" alt="">
+        </div>
+        </div>
+    </header>
+
+    <nav>
+        <div>Home</div>
+        <div>About</div>
+        <div>Gallery</div>
+        <div>Contact</div>
+        <div class="search">Search pole</div>
+    </nav>
+
+    <div class="main">
+        <div class="content">
+        <div class="image-block">
+            <img src="images.jpg" alt="">
+        </div>
+
+        <h2>Среди зелёных зарослей сверкают капли росы — каждая</h2>
+        <p>
+            Среди зелёных зарослей сверкают капли росы — каждая, как маленький алмаз, отражает утренний свет. Вдалеке слышно тихое журчание ручья, который петляет между камней и уносит листья в путешествие по неизведанным просторам. Над садом пролетает бабочка, её крылья переливаются всеми оттенками радуги.
+        </p>
+
+        <h2>Рядом на скамейке сидит старик, которого местные жители называют хранителем леса</h2>
+        <p>
+            Рядом на скамейке сидит старик, которого местные жители называют хранителем леса. Он рассказывает истории о чудесах, произошедших за долгие годы, когда деревья были ещё тоньше, а птицы — доверчивее. Его голос мягкий и глубокий, словно эхо прошлого, а глаза полны доброты
+        </p>
+    </div>
+
+        <aside class="sidebar">
+        <div class="sidebar-block">
+            <h3>Update</h3>
+            <ul>
+            <li>List</li>
+            <li>1 List</li>
+            <li>2 List</li>
+            <li>3 List</li>
+            <li>4 List</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-block">
+            <h3>Mini-gallery</h3>
+            <div class="mini-gallery">
+            <img src="images.jpg" alt="">
+            <img src="images.jpg" alt="">
+            <img src="images.jpg" alt="">
+            <img src="images.jpg" alt="">
+            </div>
+        </div>
+        </aside>
+    </div>
+
+    <footer>
+        2025
+    </footer>
+    </div>
+</body>
+</html>
