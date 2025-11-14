@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #171d25;
+    color: rgb(201, 201, 201);
+    padding: 20px 60px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    margin-left: 20%;
+}
+
+.logo img {
+    height: 45px;
+    width: 45px;
+}
+
+.logo b {
+    font-size: 1.5em;
+    color: white;
+}
+
+nav {
+    display: flex;
+    gap: 0px;
+    position: relative;
+    margin-left: 3%;
+}
+
+.menu-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-item span {
+    padding: 8px;
+    display: inline-block;
+    font-size: 1.2em;
+}
+
+.menu-item h3 {
+    padding: 0px 20px;
+    display: inline-block;
+    font-size: 0.8em;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #3d4450;
+    color: rgb(201, 201, 201);
+    font-size: 0.8em;
+    min-width: 100px;
+    z-index: 10;
+}
+
+.dropdown a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: rgb(231, 231, 231);
+}
+
+.dropdown a:hover {
+    background: #eee;
+    color: black;
+}
+
+.menu-item span:hover,
+.menu-item h3:hover {
+    color: rgb(236, 236, 236);
+}
+
+.menu-item:hover .dropdown {
+    display: block;
+}
+
+.login-language {
+    position: absolute;
+    top: 5px;
+    right: 26%;
+    font-size: 0.6em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: rgb(201, 201, 201);
+}
+
+.login-language h3 {
+    margin: 0;
+    font-weight: normal;
+}
+
+.miniheader {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #182536;
+    color: rgb(201, 201, 201);
+    padding: 0px 30px;
+}
+
+.miniheader-indent {
+    margin-left: 20%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-box 
+{
+    display: flex;
+    align-items: center;
+    background: #54575a;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    margin-left: 0%;
+    border-radius: 2px;
+}
+
+.search-box input[type="text"] 
+{
+    border: none;
+    outline: none;
+    width: 230px;
+    height: 30px;
+    font-size: 16px;
+    padding-left: 5px;
+    border-radius: 2px;
+    background: #354252;
+}
+
+.search-box button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: #1a9fff;
+    color: white;
+    width: 31px;
+    height: 32px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.main {
+    min-height: 100%;
+    height: auto;
+    background: #1e2e4d;
+    color: rgb(201, 201, 201);
+}
+
+.main h2 {
+    margin: 0;
+    padding: 10px 0px;
+    font-size: 0.8em;
+    color: white;
+}
+
+.main-box {
+    background-color: #1e2e4d;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    overflow: visible;
+    padding-top: 4%;
+    font-weight: normal;
+}
+
+.info-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: rgba(253, 253, 253, 0.5);
+    cursor: pointer;
+    user-select: none;
+    padding: 20px 12px;
+    transition: color 0.3s, transform 0.2s;
+    background-color: #132031;
+    border: none;
+}
+
+.arrow:hover 
+{
+    background-color: #344f68;
+}
+
+.arrow.left {
+    left: -50px;
+}
+
+.arrow.right {
+    right: -50px;
+}
+
+.info-box {
+    background-color: #111b24;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 1;
+}
+
+.info-box img {
+    width: 65%;
+    height: auto;
+}
+
+.info-text {
+    width: 100%;
+    color: white;
+    padding: 20px 0px 0px 20px;
+}
+
+.info-text h3 {
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    font-weight: normal;
+}
+
+.info-text h4 {
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    font-weight: normal;
+}
+
+.box-img {
+    width: 100%;
+    height: auto;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main-box-rightside {
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+}
+
+.box-img img {
+    width: 100%;
+}
+
+.tag-box {
+    background-color: #394148;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 3px 3px;
+}
+
+.tag-box h5 {
+    background: none;
+    margin: 0;
+    font-weight: normal;
+    font-size: 0.7em;
+}
+
+.price-box {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+    align-items: center;
+}
+
+.price-box h6 {
+    background: none;
+    margin-top: 5%;
+    font-weight: normal;
+    font-size: 0.6em;
+}
+
+.price-box img {
+    margin-top: 15%;
+    width: 20px;
+    height: 20px;
+}
+
+.search-box button span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.search-box button:hover span {
+    transform: scale(1.3);
+}
+
+.slider {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.slider-dots span {
+    display: block;
+    width: 16px;
+    height: 9px;
+    background: #4d657b;
+    border-radius: 3px;
+}
+.slider-dots span:hover {
+    background: #64788c;
+}
+.slider-dots .active {
+    background: #7a8b9c;
+}
+
+.main-box-button 
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    position: relative; /* ✅ теперь стрелки будут позиционироваться внутри этого блока */
+}
+
+/* ===== DISCOUNTS & EVENTS ===== */
+.discounts-section 
+{
+    color: white;
+
+}
+
+.discounts-section h2 
+{
+    text-align: left;
+    margin: 0;
+    padding: 10px 0px;
+    font-size: 0.8em;
+    color: white;
+}
+
+/* Общий контейнер */
+.discounts-layout 
+{
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
+}
+
+/* Левая часть — две большие карточки */
+.left-column 
+{
+    display: flex;
+    gap: 10px;
+    flex: 1.5 ;
+}
+
+/* Правая часть — две маленькие карточки */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+/* Карточки */
+.discount-card
+{
+    background: #16202d;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.discount-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+}
+
+.discount-card img 
+{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Размеры карточек */
+.discount-card.big img {
+    height: 320px;
+}
+
+.discount-card.small img {
+    height: 123px;
+}
+
+.badge.blue {
+    background: #0078d4;
+}
+
+/* Информация о скидке */
+.discount-info 
+{
+    padding: 10px;
+    text-align: left;
+    background: #134863;
+}
+
+.discount-info h3 {
+    font-size: 1em;
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.discount-info p {
+    font-size: 0.85em;
+    color: #ccc;
+    margin-bottom: 4px;
+}
+
+/* Цены */
+.discount-price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.discount {
+    background: #8fd920;
+    color: #000;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 0.85em;
+}
+
+.new-price {
+    color: #9df1ff;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+
+.event-box {
+    background-color: #1e2e4d;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    overflow: visible;
+    font-weight: normal;
+    position: relative;
+}
+
+</style>
+<body>
+     <header>
+        <div class="logo">
+            <img src="Steam.png.webp" alt="logo">
+            <b>STEAM</b>
+        </div>
+        <nav>
+            <div class="menu-item">
+                <span>Магазин</span>
+                <div class="dropdown">
+                    <a href="#">Главная</a>
+                    <a href="#">Очередь открытий</a>
+                    <a href="#">Желаемое</a>
+                    <a href="#">Магазин очков</a>
+                    <a href="#">Новости</a>
+                    <a href="#">Статистика</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <span>Сообщество</span>
+                <div class="dropdown">
+                    <a href="#">Главная</a>
+                    <a href="#">Обсуждение</a>
+                    <a href="#">Мастерская</a>
+                    <a href="#">Торговая площадка</a>
+                    <a href="#">Трансляции</a>
+                </div>
+            </div>
+            <div class="menu-item"><span>Информация</span></div>
+            <div class="menu-item"><span>Поддержка</span></div>
+        </nav>
+        <div class="login-language">
+            <div class="menu-item"><span>Вход</span></div>
+            <h3>|</h3>
+            <div class="menu-item">
+                <span>Язык</span>
+                <div class="dropdown">
+                    <a href="#">Английский (English)</a>
+                    <a href="#">Немецкий (German)</a>
+                    <a href="#">Французский (French)</a>
+                    <a href="#">Украинский (Ukrainian)</a>
+                    <a href="#">Сербский (Serbian)</a>
+                    <a href="#">Казахский (Kazakh)</a>
+                    <a href="#">Русский (Russian)</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="miniheader">
+        <div class="miniheader-indent">
+            <div class="menu-item">
+                <h3>Осмотр</h3>
+            </div>
+            <div class="menu-item">
+                <h3>Рекомендации</h3>
+            </div>
+            <div class="menu-item">
+                <h3>Категории</h3>
+            </div>
+            <div class="menu-item">
+                <h3>Способы игры</h3>
+            </div>
+            <div class="menu-item">
+                <h3>Специальные разделы</h3>
+            </div>
+        </div>
+        <form class="search-box" action="#" method="get">
+            <input type="text" name="q" placeholder="Поиск по магазину">
+            <button type="submit"><span>⌕</span></button>
+        </form>
+    </div>
+
+    <div class="main">
+        <div class="main-box-button">
+            <div class="main-box">
+                <h2>ПОПУЛЯРНОЕ И РЕКОМЕНДУЕМОЕ</h2>
+
+                <div class="info-box">
+                    <button class="arrow left">❮</button>
+
+                    <img src="img/dota/dota-logo.jpg" alt="dota">
+                    <div class="main-box-rightside">
+                        <div class="info-text">
+                            <h3>Dota 2</h3>
+                        </div>
+                        <div class="box-img">
+                            <img src="img/dota/dota1.jpg" alt="dota-image">
+                            <img src="img/dota/dota2.jpg" alt="dota-image">
+                            <img src="img/dota/dota3.jpg" alt="dota-image">
+                            <img src="img/dota/dota4.jpg" alt="dota-image">
+                        </div>
+                        <div class="info-text">
+                            <h4>Уже доступно</h4>
+                            <div class="tag-box">
+                                <h5>Лидер продаж</h5>
+                            </div>
+                            <div class="price-box">
+                                <h6>Бесплатно</h6>
+                                <div>
+                                    <img src="img/logo/steam.png" alt="steam-logo">
+                                    <img src="img/logo/windows.png" alt="windows-logo">
+                                    <img src="img/logo/apple.png" alt="apple-logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="arrow right">❯</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider">
+            <div class="slider-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="main-box-button">
+            <div class="event-box">
+                <button class="arrow left">❮</button>
+                <div class="discounts-section">
+                    <h2>РАСПРОДАЖА И СОБЫТИЯ</h2>
+                    <div class="discounts-layout">
+                        <div class="left-column">
+                            <div class="discount-card big">
+                                <img src="img/event-logo/spider-man.png" alt="Spider-Man Remastered">
+                                <div class="discount-info">
+                                    <h3>Spider-Man Remastered</h3>
+                                    <p>Предложение в середине недели</p>
+                                    <p>Закончится 6 Ноября @ 8:00pm.</p>
+                                    <div class="discount-price">
+                                        <span class="discount">-50%</span>
+                                        <span class="old-price">1599₴</span>
+                                        <span class="new-price">799₴</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="discount-card big">
+                                <img src="img/event-logo/Gta V.jpg" alt="Gta V">
+                                <div class="discount-info">
+                                    <h3>Grand Theft Auto V</h3>
+                                    <p>Предложение в середине недели</p>
+                                    <p>Закончится 12 Ноября @ 7:00pm.</p>
+                                    <div class="discount-price">
+                                        <span class="discount">-33%</span>
+                                        <span class="old-price">800₴</span>
+                                        <span class="new-price">266₴</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="right-column">
+                            <div class="discount-card small">
+                                <img src="img/event-logo/Rust.jpg" alt="Rust">
+                                <div class="discount-info">
+                                    <h3>Rust</h3>
+                                    <p>Сегодняшняя сделка!</p>
+                                    <div class="discount-price">
+                                        <span class="discount">-25%</span>
+                                        <span class="old-price">800₴</span>
+                                        <span class="new-price">600₴</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="discount-card small">
+                                <img src="img/event-logo/Path of Exile 2.jpg" alt="Path of Exile 2">
+                                <div class="discount-info">
+                                    <h3>Path of Exile 2</h3>
+                                    <p>Сегодняшняя сделка!</p>
+                                    <div class="discount-price">
+                                        <span class="discount">-50%</span>
+                                        <span class="old-price">600₴</span>
+                                        <span class="new-price">300₴</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="arrow right">❯</button>
+            </div>
+            <div class="slider">
+                <div class="slider-dots">
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
