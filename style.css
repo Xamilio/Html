@@ -33,6 +33,7 @@ header {
 .logo b {
     font-size: 1.5em;
     color: white;
+    padding-top: 5px;
 }
 
 nav {
@@ -51,6 +52,14 @@ nav {
     padding: 8px;
     display: inline-block;
     font-size: 1.2em;
+}
+.menu-item button {
+    padding: 8px;
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    color: rgb(201, 201, 201);
+
 }
 
 .menu-item h3 {
@@ -84,7 +93,8 @@ nav {
 }
 
 .menu-item span:hover,
-.menu-item h3:hover {
+.menu-item h3:hover,
+.menu-item button:hover {
     color: rgb(236, 236, 236);
 }
 
@@ -952,7 +962,6 @@ nav {
     height: 100%;
     background-image: url("background.png");
 }
-/* ===== Планшет (ширина до 1024px) ===== */
 @media (max-width: 1024px) {
     header {
         flex-direction: column;
@@ -986,7 +995,7 @@ nav {
 
     .popular-new-box {
         width: 100%;
-        margin-top: 40px;         /* увеличенный отступ сверху */
+        margin-top: 40px;
         padding: 0 10px;
         box-sizing: border-box;
         display: flex;
@@ -1003,7 +1012,6 @@ nav {
     }
 }
 
-/* ===== Телефон (ширина до 600px) ===== */
 @media (max-width: 600px) {
     header {
         flex-direction: column;
@@ -1072,14 +1080,14 @@ nav {
         align-items: flex-start;
         gap: 8px;
         width: 100%;
-        margin: 20px 0 0 0;   /* чуть больше отступ сверху на телефоне */
+        margin: 20px 0 0 0; 
         padding: 10px;
         box-sizing: border-box;
     }
 
     .popular-new-box {
         width: 100%;
-        margin-top: 50px;         /* ещё чуть больше отступ на телефоне */
+        margin-top: 50px;
         padding: 0 10px;
         box-sizing: border-box;
     }
